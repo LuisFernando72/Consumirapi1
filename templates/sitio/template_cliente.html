@@ -1,0 +1,169 @@
+<dialog id="modalCliente">
+    <div class="container2">
+      <div class="info-container" id="InfoCont">
+        <!-- <div class="container-form"> -->
+        <div id="btn_cancelarDatosC" class="btn_cancelar">
+          <i class="fa-solid fa-circle-xmark ex"> </i>
+        </div>
+        <header>CONTROL CLIENTES</header>
+        <br />
+  
+        <div class="form-principalDT">
+          <form
+            id="formC"
+            action="/operacionesClientes"
+            method="post"
+          >
+            <!-- PAGINA NO 1 DATOS GENERALES -->
+            <div class="pagina movPag">
+              <div class="gridpagina">
+                <input type="hidden" name="idCliente" id="idCliente" />
+              
+                <!-- Nombres -->
+                <div class="campo">
+                  <div class="label">
+                    Nombres <b class="error" id="txtnombres-error"></b>
+                  </div>
+                  <span id="icoError2" class="input-icon"
+                    ><ion-icon name="text-sharp"></ion-icon
+                  ></span>
+                  <input
+                    type="text"
+                    id="txtnombres"
+                    name="txtnombres"
+                    placeholder="Nombres"
+                  />
+                </div>
+                  <!-- Apellidos -->
+                  <div class="campo">
+                    <div class="label">
+                      Apellidos <b class="error" id="txtapellidos-error"></b>
+                    </div>
+                    <span id="icoError2" class="input-icon"
+                      ><ion-icon name="text-sharp"></ion-icon
+                    ></span>
+                    <input
+                      type="text"
+                      id="txtapellidos"
+                      name="txtapellidos"
+                      placeholder="Apellidos"
+                    />
+                  </div>
+               
+                    <!-- Nombres -->
+                <div class="campo">
+                    <div class="label">
+                      Nit <b class="error" id="txtnit-error"></b>
+                    </div>
+                    <span id="icoError2" class="input-icon"
+                      ><ion-icon name="text-sharp"></ion-icon
+                    ></span>
+                    <input
+                      type="text"
+                      id="txtnit"
+                      name="txtnit"
+                      placeholder="Agregar nit"
+                    />
+                  </div>
+            
+  
+                <!-- CATEGORIAS -->
+                <div class="campo">
+                  <div class="label">
+                    Genero<b class="error" id="txtgenero-error"></b>
+                  </div>
+                  <span id="icoError2" class="input-icon"
+                    ><i class="fa fa-angle-double-down" aria-hidden="true"></i
+                  ></span>
+                  <select name="txtgenero" id="txtgenero">
+                    <option value="-1" disabled selected>Elegir</option>
+                    <option value="0">Femenino</option>
+                    <option value="1">Masculino</option>
+
+                  </select>
+                </div>
+            </div>
+                 <!-- Correo electronico -->
+                 <div class="campo">
+                    <div class="label">
+                      Correo electronico <b class="error" id="txtcorreo-error"></b>
+                    </div>
+                    <span id="icoError2" class="input-icon"
+                      ><ion-icon name="text-sharp"></ion-icon
+                    ></span>
+                    <input
+                      type="text"
+                      id="txtcorreo"
+                      name="txtcorreo"
+                      placeholder="Ingresar correo"
+                    />
+                  </div>
+   
+          
+              
+              <div class="btnsgroup">
+                <div>
+                  <button
+                    name="accion1"
+                    id="btnAgregarCliente"
+                    value="InsertarCliente"
+                    type="button"
+                  >
+                    AgregarCliente
+                  </button>
+                </div>
+  
+                <div>
+                  <button
+                    name="accion1"
+                    id="btnEliminarCliente"
+                    value="EliminarCliente"
+                    type="button"
+                  >
+                    Eliminar Cliente
+                  </button>
+                </div>
+  
+                <div>
+                  <button
+                    name="accion1"
+                    id="btnModificarCliente"
+                    value="ModificarCliente"
+                    type="button"
+                  >
+                    Modificar Cliente
+                  </button>
+                </div>
+              </div>
+
+            
+
+  
+            </div>
+          </form>
+        </div> 
+        </div>
+        
+      
+      <!-- imagen -->
+      <div class="image-container">
+        <div class="logo">
+        
+          <img
+            src="{{url_for('static', filename='img/logoTortuga.png')}}"
+            alt=""
+          />
+          <div class="nombre-empresa">
+            <h3 style="letter-spacing: 4px; font-size: 24px">SAESVIN</h3>
+          </div>
+        </div>
+        <br /><br />
+        <div class="image2">
+          <img src="{{url_for('static', filename='img/fondo1.svg')}}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    
+  </dialog>
+  

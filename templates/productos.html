@@ -1,0 +1,105 @@
+{%include '/sitio/cabecera.html'%}
+
+<body>
+{%include '/sitio/menu.html' %}
+ <main> 
+    <div class="head-title">
+      <div class="left">
+        
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Generales</a>
+          </li>
+          <li><i class="bx bx-chevron-right"></i></li>
+          <li>
+            <a class="active" href="#">Productos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="box-info">
+      <li>
+        <i class='bx bxs-add-to-queue bx-burst' ></i>
+      
+        <div class="btn">
+            <button type="button" id="AbrirModalProducto" class="ventanaP" >Agregar Producto</button>
+              </div> 
+      </li>
+    </ul>
+ 
+   
+
+      <!-- INICIO FORMULARIO -->
+
+      {%include '/sitio/template_crea.html'%}
+
+ 
+
+ <div class="table1">
+<table id="tblCustomer" class="display" style="width: 100%;">
+    <thead style="width: 100%;">
+        <tr>
+
+
+            <th>idproducto</th> 
+            <th>idcategoria</th> 
+            <th>idmarca</th> 
+            <th>idinventario</th> 
+            <th>idproveedor</th> 
+            <th>idbodega</th> 
+            <th>idcompra</th> 
+            <th>categoria</th> 
+            <th>Marca</th> 
+            <th>Producto</th> 
+            <th>Descripcion</th> 
+            <th>Imagen</th> 
+            <th>Precio c/u</th> 
+          <th>precio venta</th> 
+          <th>documento</th> 
+            <th>Proveedor</th> 
+            <th>Cantidad</th> 
+            <th>Bodega</th> 
+            <th>Fecha_hora Compra</th> 
+            <th>ima</th> 
+        </tr>
+    </thead>
+    <tbody>
+    {% for t in rr.tabla %}
+   
+        <tr>
+            <td>{{t["ID_PRODUCTO"]}}</td>
+            <td>{{t["ID_CATEGORIA"]}}</td>
+            <td>{{t["ID_MARCA"]}}</td>
+            <td>{{t["ID_INVENTARIO"]}}</td>
+            <td>{{t["ID_PROVEEDOR"]}}</td>
+            <td>{{t["ID_BODEGA"]}}</td>
+            <td>{{t["ID_COMPRA"]}}</td>
+            <td>{{t["NOMBRE_CATEGORIA"]}}</td>
+            <td>{{t["NOMBRE_MARCA"]}}</td>
+            <td>{{t["PRODUCTO"]}}</td>
+            <td>{{t["DESCRIPCION"]}}</td>
+            <td><div class="rowimg"><img src="{{ url_for('static', filename = 'imgc/'+t.IMAGEN) }}" alt=""></div></td>
+            <td>{{t["PRECIO_UNITARIO"]}}</td>
+            <td>{{t["PRECIO_VENTA"]}}</td>
+            <td>{{t["NO_DOCUMENTO"]}}</td>
+            <td>{{t["PROVEEDOR"]}}</td>
+            <td>{{t["CANTIDAD"]}}</td>
+            <td>{{t["NOMBRE_BODEGA"]}}</td>
+            <td>{{t["FECHA_INGRESO"]}}</td>
+            <td>{{t["IMAGEN"]}}</td>
+
+           
+        </tr>
+        {% endfor%}
+
+  
+    </tbody>
+ 
+</table>
+</div>
+   </main>
+  </section>
+ 
+  {% include '/sitio/footer.html' %}
+</body>
+</html>

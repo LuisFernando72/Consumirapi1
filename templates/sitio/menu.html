@@ -1,0 +1,28 @@
+
+ 
+ 
+  <!-- MENU DINAMICO -->
+   <section id="menu_opcion">{{rr.pintar | safe}}</section> 
+
+ 
+ <!-- NAV USUARIOA  -->
+
+  <section id="contenido">
+    <nav>
+      <i class="bx bx-menu"></i>
+      <form action="#">
+        <div class="form-input">
+          <p>
+            ¡¡Bienvenido!! {{session['nombres'] }} {{session['apellidos'] }}
+          </p>
+        </div>
+      </form>
+      <input type="checkbox" id="switch-mode" hidden />
+      <label for="switch-mode" class="switch-mode"></label>
+      <a href="#" class="profile">
+        <img src="{{url_for('static', filename='img/buho.jpg')}}" />
+      </a>
+    </nav>
+
+ 
+

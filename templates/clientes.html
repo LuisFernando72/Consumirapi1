@@ -1,0 +1,85 @@
+{%include '/sitio/cabecera.html'%}
+
+<body>
+{%include '/sitio/menu.html' %}
+ <main> 
+    <div class="head-title">
+      <div class="left">
+        
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Generales</a>
+          </li>
+          <li><i class="bx bx-chevron-right"></i></li>
+          <li>
+            <a class="active" href="#">Clientes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="box-info">
+      <li>
+        <i class='bx bxs-add-to-queue bx-burst' ></i>
+      
+        <div class="btn">
+            <button type="button" id="AbrirModalCliente" class="ventanaP" >Agregar Cliente</button>
+              </div> 
+      </li>
+    </ul>
+ 
+   
+
+      <!-- INICIO FORMULARIO -->
+      {%include '/sitio/template_cliente.html'%}
+
+  
+
+ <div class="table2">
+<table id="tblCliente" class="display" style="width: 100%;">
+    <thead style="width: 100%;">
+        <tr>
+            <th>idcliente</th> 
+            <th>Nombres</th> 
+            <th>Apellidos</th> 
+            <th>Nit</th> 
+            <th>Genero</th> 
+            <th>idGenero</th> 
+            <th>Fecha ingreso</th> 
+            <th>Correo</th> 
+            <th>Fecha Actualizacion</th> 
+             
+        </tr>
+    </thead>
+    <tbody>
+    {% for t in rr.tabla %}
+    {% if t.genero == 0 %}
+    {% set sexo = "Femenino" %}
+        {% else %}
+    {% set sexo = "Masculino" %}
+        {% endif %}
+        <tr>
+            <td>{{t["idcliente"]}}</td>
+            <td>{{t["nombres"]}}</td>
+            <td>{{t["apellidos"]}}</td>
+            <td>{{t["nit"]}}</td>
+            <td>{{sexo}}</td>
+            <td>{{t["genero"]}}</td>
+            <td>{{t["fecha_ingreso"]}}</td>
+            <td>{{t["correo"]}}</td>
+            <td>{{t["fecha_modificacion"]}}</td>
+            
+           
+        </tr>
+        {% endfor%}
+
+  
+    </tbody>
+ 
+</table>
+</div>
+   </main>
+  </section>
+ 
+  {% include '/sitio/footer.html' %}
+</body>
+</html>
